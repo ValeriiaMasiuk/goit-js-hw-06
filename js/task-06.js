@@ -9,7 +9,6 @@ function onInputBlur(event) {
         input.classList.add('valid');
         return 
     } 
-        input.classList.remove('valid')
         input.classList.add('invalid')
 }
 
