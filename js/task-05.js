@@ -7,10 +7,7 @@ const nameInput = document.querySelector('#name-output')
 function onInputAction(event) {
     const valueInput = event.currentTarget.value;
 
-    if (valueInput.length === 0) {
-        nameInput.textContent = 'Anonymous';
-    }
-       nameInput.textContent = valueInput
+    nameInput.textContent = valueInput === '' || valueInput.split(" ").every(value => value === '') ? 'Anonymous' : valueInput;
 }
 
 input.addEventListener('input', onInputAction)
