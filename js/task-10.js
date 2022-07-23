@@ -21,26 +21,25 @@ let startSize = 30;
 let step = 10;
 
 // console.log(boxes)
-
-createBtn.addEventListener('click', createBoxes)
+createBtn.addEventListener('click', makeBoxes)
 destroyBtn.addEventListener('click', destroyBoxes)
 
-function createBoxes(amount) {
-  amount = input.value;
+function makeBoxes() {
+  createBoxes(Number(input.value))
+}
 
+function createBoxes(amount) {
   if (amount > 100) {
     console.log('Error');
     return;
   }
-
   console.log('Elements created')
 
   const boxesList = []
-
   for (let i = 1; i <= amount; i += 1) {
     const boxesEl = document.createElement('div');
 
-    let size = startSize + i * step;
+    let size = startSize + (i-1) * step;
 
     boxesEl.style.width = `${size}px`;
     boxesEl.style.height = `${size}px`
